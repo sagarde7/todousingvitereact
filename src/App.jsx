@@ -63,18 +63,21 @@ function App() {
   return (
     <React.Fragment>
       <Navbar />
-      <div className="container  mx-auto my-5 p-5 rounded-xl bg-violet-500 min-h-[92vh] lg:w-1/2 md:w-full">
+      <div className="container  mx-auto my-5 p-5 rounded-xl bg-purple-500 min-h-[92vh] lg:w-1/2 md:w-full">
         <div className="todos">
           <h2 className="font-bold underline text-xl text-center text-white">JUST DO IT</h2>
           <h3 className="ml-10 underline font-bold mb-2 text-white">ADD A TASK</h3>
           <input
             onChange={handleChange}
             value={todo}
+            placeholder='3 chars atleast'
             type="text"
-            className="rounded-xl h-12 w-4/6"
+            className="rounded-xl h-12 md:w-4/6 w-1/4"
           />
           <button
-            onClick={handleAdd} disabled={todo.length < 3} className="add disabled:bg-slate-400 bg-white ml-8 rounded-md p-3 hover:underline hover:font-bold decoration-blue-400">
+            onClick={handleAdd} 
+            disabled={todo.length < 3} 
+            className="add disabled:bg-slate-400 bg-white ml-8 rounded-md p-3 hover:underline hover:font-bold decoration-blue-400">
             Add
           </button>
           <button
@@ -96,8 +99,8 @@ function App() {
               <div
                 className={
                   items.isCompleted
-                    ? 'line-through text text-lg align-middle mt-1 text-black w-4/6'
-                    : 'text text-lg align-middle mt-1 text-white w-4/6'
+                    ? 'line-through text text-lg align-middle mt-1 text-black md:w-4/6 w-1/2'
+                    : 'text text-lg align-middle mt-1 text-white md:w-4/6 w-1/2'
                 }
               >
                 {items.todo}
